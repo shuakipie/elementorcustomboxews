@@ -1,0 +1,33 @@
+/*
+Theme Name: THERATIO RTL
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.main-navigation ul>li.menu-item-has-children>a, .main-navigation ul>li.is-mega-menu>a{
+    padding-left: 17px;
+    padding-right: 0;
+}
+.main-navigation ul>li.menu-item-has-children>a:after, .main-navigation ul>li.is-mega-menu>a:after{
+    right: auto;
+    left: 1px;
+}
+.main-navigation ul li li a{
+    text-align: right;
+}
+.main-navigation:not(.no-line) ul li li a:before{
+    right: 0;
+}
+.main-navigation ul li li a:hover, .main-navigation ul ul li.current-menu-item>a, .main-navigation ul ul li.current-menu-ancestor>a{
+    padding-left: 0;
+    padding-right: 40px;
+}
